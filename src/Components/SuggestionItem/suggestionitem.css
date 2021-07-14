@@ -4,7 +4,6 @@
     display: flex;
     margin: 10px;
     justify-content: space-between;
-    /* flex-direction: column; */
     padding: 10px;
 }
 .suggestion-details{
@@ -25,7 +24,5 @@
     width: 5%;
 }
 .profile-btn{
-    /* width: 20%; */
     padding: 5px;
-
 }

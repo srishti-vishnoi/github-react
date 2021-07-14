@@ -31,4 +31,4 @@ export const loginAsync = (username, password) => async (dispatch) => {
 
 export const logout = () => ({
     type: "LOGOUT"
-})
+});
