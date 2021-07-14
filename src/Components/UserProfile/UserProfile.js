@@ -16,8 +16,6 @@ class UserProfile extends Component {
         } else if (this.props.user) {
             this.username = this.props.user.login;
         }
-        console.log('this.username ---- ');
-        console.log(this.username);
         if (this.username)
             await this.props.fetchProfile(this.username);
         else
@@ -25,16 +23,13 @@ class UserProfile extends Component {
     }
 
     componentDidUpdate = async (prevProps) => {
-        console.log('update profle', prevProps.match.params.username, this.props.match.params.username);
         if (prevProps.match.params.username !== this.props.match.params.username) {
             await this.fetchProfileHelper();
         }
     }
 
     componentDidMount = async () => {
-        console.log('mount profle  ', this.props);
         await this.fetchProfileHelper();
-
     }
 
     showProfileResult = ({ user, loading, error }) => {
@@ -87,7 +82,7 @@ class UserProfile extends Component {
 const mapStateToProps = ({ login, userProfile }) => ({
     userProfile: userProfile,
     user: login.user,
-    isLoggedInUserProfile: login.user !== null && login.user.login === userProfile.user.login,
+    isLoggedInUserProfile: login.user && userProfile.user && login.user.login === userProfile.user.login,
 })
 
 const mapDispatchToProps = dispatch => ({

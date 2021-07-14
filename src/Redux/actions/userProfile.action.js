@@ -17,7 +17,6 @@ export const userProfileFailure = (error) => ({
 
 export const userProfileAsync = (username) => async (dispatch) => {
     dispatch(userProfileStart());
-    console.log('start');
     try {
         const resp = await axios.get(`https://api.github.com/users/${username}`);
         dispatch(userProfileSuccess(resp.data));

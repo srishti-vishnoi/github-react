@@ -1,6 +1,6 @@
 import React from 'react';
 import "./header.css";
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logo from '../../Assets/logo.png';
 import { logout } from '../../Redux/actions/login.action';
@@ -24,7 +24,7 @@ const Header = ({ isLoggedIn = false, history, logout, loginData }) => {
 
         return (
             <div>
-                <button className="nav-div-button" exact to={`/profile/`}>Profile</button>
+                <NavLink className="nav-div-button" exact to={`/profile/`}>Profile</NavLink>
                 <button className="nav-div-button" onClick={handleLogout}>Log out</button>
 
             </div>

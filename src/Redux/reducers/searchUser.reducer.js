@@ -1,6 +1,6 @@
 const init = {
     loading: false,
-    user: null,
+    result: null,
     error: undefined,
   };
   

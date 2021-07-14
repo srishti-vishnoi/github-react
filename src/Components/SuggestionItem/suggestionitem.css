@@ -1,0 +1,31 @@
+.suggestion-list-item{
+    width: 300px;
+    background-color: beige;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    padding: 10px;
+}
+.suggestion-details{
+ display: flex
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.btn{
+    cursor: pointer;
+    align-self: center;
+    margin: 0 4px 0 4px;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+.delete-btn{
+    width: 5%;
+}
+.profile-btn{
+    /* width: 20%; */
+    padding: 5px;
+
+}

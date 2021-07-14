@@ -17,7 +17,6 @@ export const searchUserFailure = (error) => ({
 
 export const searchUserAsync = () => async (dispatch) => {
     dispatch(searchUserStart());
-    console.log('start');
     try {
         // const resp = await axios.get('https://api.github.com/search/code', {
         //     q: 'srishtivishnoi'

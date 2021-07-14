@@ -23,7 +23,6 @@ class ListFollowingFollower extends Component {
     }
 
     componentDidMount = async () => {
-        console.log('mount');
         await this.fetchListFollowingFollower();
     }
     render() {

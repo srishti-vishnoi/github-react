@@ -4,7 +4,6 @@ import './userlistitem.css';
 
 function UserListItem({user, history}) {
     const handleClick = ()=> {
-        console.log('user.login  ,    ', user.login);
         history.push(`/profile/${user.login}`);
     }
     return (

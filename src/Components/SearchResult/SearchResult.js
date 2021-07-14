@@ -26,8 +26,6 @@ class SearchResult extends Component {
 
     componentDidMount = async () => {
         const { username } = this.props.match.params;
-
-        console.log('mounted   ',);
         await this.props.search(username)
     }
 
@@ -47,6 +45,6 @@ const mapStateToProps = ({ search }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    search: () => dispatch(searchUserAsync()),
+    search: (username) => dispatch(searchUserAsync(username)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchResult));
