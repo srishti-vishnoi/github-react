@@ -1,6 +1,9 @@
 # Github Profile Viewer -  React Rampup
 
-
+## Implemented the following functionalities :
+1. Login with Personal Access Token
+2. Search User Profile based on username
+3. List Followers af following of a user
 
 ## Available Scripts
 

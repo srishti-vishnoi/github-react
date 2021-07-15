@@ -1,0 +1,7 @@
+.user-list-item{
+    width: 400px;
+    background-color: beige;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
