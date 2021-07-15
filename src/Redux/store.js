@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { loginReducer } from "./reducers/login.reducer";
-import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { searchUserReducer } from "./reducers/searchUser.reducer";
 import { userProfileReducer } from "./reducers/userProfile.reducer";
@@ -11,5 +10,5 @@ const rootReducer = combineReducers({
   userProfile: userProfileReducer,
   suggestions: suggestUserReducer,
 });
-const middleWare = [logger, thunk];
+const middleWare = [thunk];
 export const store = createStore(rootReducer, applyMiddleware(...middleWare));

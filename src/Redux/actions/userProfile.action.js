@@ -1,4 +1,4 @@
-import axios from "axios";
+import GithubService from "../../Services/github_service";
 
 export const userProfileStart = () => ({
     type: "FETCH_USER_PROFILE_START",
@@ -18,7 +18,7 @@ export const userProfileFailure = (error) => ({
 export const userProfileAsync = (username) => async (dispatch) => {
     dispatch(userProfileStart());
     try {
-        const resp = await axios.get(`https://api.github.com/users/${username}`);
+        const resp = await GithubService.fetchProfile(username);
         dispatch(userProfileSuccess(resp.data));
     } catch (e) {
         dispatch(userProfileFailure(e.message));

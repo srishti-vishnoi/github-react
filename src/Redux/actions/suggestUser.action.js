@@ -1,4 +1,4 @@
-import axios from "axios";
+import GithubService from "../../Services/github_service";
 
 export const suggestUserStart = () => ({
     type: "SUGGEST_USER_START",
@@ -18,9 +18,7 @@ export const suggestUserFailure = (error) => ({
 export const suggestUserAsync = () => async (dispatch) => {
     dispatch(suggestUserStart());
     try {
-        const resp = await axios.get('https://api.github.com/users', {
-            per_page: 30
-        });
+       const resp = await GithubService.suggestUsers();
         dispatch(suggestUserSuccess(resp.data));
     } catch (e) {
         dispatch(suggestUserFailure(e.message));

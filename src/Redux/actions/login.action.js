@@ -1,4 +1,4 @@
-import Axios from "axios";
+import GithubService from "../../Services/github_service";
 
 export const loginStart = (token) => ({
     type: "LOGIN_START",
@@ -18,11 +18,7 @@ export const loginFailure = (error) => ({
 export const loginAsync = (username, password) => async (dispatch) => {
     dispatch(loginStart(password));
     try {
-        const resp = await Axios.get("https://api.github.com/user", {
-            headers: {
-                Authorization: `token ${password}`
-            }
-        });
+        const resp =  await GithubService.login(username, password);
         dispatch(loginSuccess(resp.data));
     } catch (e) {
         dispatch(loginFailure(e.message));

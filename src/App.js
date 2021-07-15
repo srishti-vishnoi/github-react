@@ -6,7 +6,6 @@ import Home from "./Pages/Home/Home";
 import { connect } from "react-redux";
 
 function App({ isLoggedIn = false }) {
-  console.log('hiii');
   return (
     <div className="App">
       <div>
